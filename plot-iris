@@ -1,3 +1,22 @@
+#On créé un graphique à partir des variables "Sepal.Length" (longueur du sépale) et "Sepal.Width" (largeur du sépale) du jeu de données "iris". 
+ Le graphique est personnalisé avec un thème appelé "theme_ipsum".
 ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) + 
+#Les points sont colorés en fonction de la variable "Species" (espèce).
     geom_point(size=6) +
     theme_ipsum()
+
+# La deuxième partie du code crée un autre graphique avec les mêmes variables "Sepal.Length" et "Sepal.Width". 
+#Cette fois-ci, les points sont tous de couleur noire avec un remplissage bleu. 
+
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) + 
+  geom_point(
+    color="black",
+    fill="blue",
+    #Les points sont dessinés sous forme de carrés (shape=22) avec une transparence de 0,5.
+    shape=22, 
+    alpha=0.5,
+    size=2,
+    stroke = 1
+  ) +
+  theme_ipsum()
+  # Les points ont une taille de 2 et une épaisseur de contour de 1. Encore une fois, le graphique est personnalisé avec le thème "theme_ipsum".
